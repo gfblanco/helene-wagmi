@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  fortuna:
+    build:
+      context: ../fortuna-api-container
+      dockerfile: Dockerfile
+    container_name: fortuna_container
+    ports:
+      - "5000:5000"
+
+  ipfspnet:
+    build:
+      context: ../ipfs-private-net
+      dockerfile: Dockerfile
+    container_name: ipfspnet_container
+    ports:
+      - "4001:4001"      
+      - "8081:8081"
+      - "5001:5001"      
+
+  oracle:
+    volumes:
+      - .\ignition\deployments\chain-31337\deployed_addresses.json:/app/deployed_addresses.json
+      - .\ignition\deployments\chain-31337\artifacts\HeleneModule#Oracle.json:/app/HeleneModule#Oracle.json
+    build:
+      context: ../oracle-container-alpine
+      dockerfile: Dockerfile
+    container_name: oracle_container
+    ports:
+      - "8000:8000"

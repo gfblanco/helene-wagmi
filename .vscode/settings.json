@@ -1,0 +1,41 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json,pnpm-lock.yaml,yarn.lock,bun.lockb",
+    "next.config.js": "ethereum-env.d.ts,next-env.d.ts,tanstack-env.d.ts,tsconfig.json",
+    "tailwind.config.js": "components.json,postcss.config.js"
+  },
+  "editor.linkedEditing": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[solidity]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "files.defaultLanguage": "${activeEditorLanguage}",
+  "files.exclude": {
+    "node_modules": true,
+    "ignition/deployments": true,
+    "artifacts": true,
+    "cache": true,
+    "build": true,
+    ".next": true,
+    ".vercel": true
+  },
+  "eslint.format.enable": true,
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"]
+}
