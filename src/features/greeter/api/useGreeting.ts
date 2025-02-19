@@ -3,7 +3,7 @@
 import { useEffect } from "react"
 import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi"
 
-import { GREETER_ABI } from "@/lib/constants"
+import { GREETER_ABI, GREETER_ADDRESS } from "@/lib/constants"
 
 const useGreeting = ({
   newGreeting,
@@ -29,7 +29,7 @@ const useGreeting = ({
     isError: getGreetingError,
     refetch: refetchGreeting,
   } = useReadContract({
-    address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
+    address: GREETER_ADDRESS as `0x${string}`,
     abi: GREETER_ABI,
     functionName: "getGreeting",
   })
@@ -62,7 +62,7 @@ const useGreeting = ({
     getGreetingError,
     setGreeting: () =>
       setGreeting?.({
-        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
+        address: GREETER_ADDRESS as `0x${string}`,
         abi: GREETER_ABI,
         functionName: "setGreeting",
         args: [newGreeting],

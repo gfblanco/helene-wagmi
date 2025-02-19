@@ -28,5 +28,8 @@ export const GREETER_ADDRESS = addresses["HeleneModule#Greeter"]
 
 export const GREETER_ABI = greeterJSON.abi
 
+export const NEXT_PUBLIC_RAINBOWKIT_PROJECT_ID = "b2f0abf1d4af31cc55fb381e2652d6c4"
+
+
 // TODO: Change the mime type to "application/pdf"
 export const TEST_MIME_TYPE = "text/plain"

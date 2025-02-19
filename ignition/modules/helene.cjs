@@ -12,6 +12,6 @@ module.exports = buildModule("HeleneModule", (module) => {
     auction: auctionContract,
     oracle: oracleContract,
     token: tokenContract,
-    greeter: greeterContract
+    greeter: greeterContract,
   }
 })
